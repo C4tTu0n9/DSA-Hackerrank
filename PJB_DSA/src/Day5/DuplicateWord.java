@@ -41,8 +41,6 @@ public class DuplicateWord {
             // Prints the modified sentence.
             System.out.println(input);
         }
-
-        in.close();
     }
 
 }

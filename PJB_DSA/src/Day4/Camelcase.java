@@ -1,5 +1,7 @@
 package Day4;
 
+import java.util.Scanner;
+
 public class Camelcase {
     public static int camelcase(String s) {
         // Write your code here
@@ -29,7 +31,25 @@ public class Camelcase {
     }
 
     public static void main(String[] args) {
-        System.out.println(camelcase("ab"));
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Your String:");
+            String str = sc.nextLine().trim();
+            System.out.println("Result: " + camelcase(str));
+
+            while (true) {
+                System.out.println("Continue? (Y/N)");
+                String input = sc.nextLine().trim().toLowerCase();
+                if (input.equals("y")) {
+                    break;
+                } else if (input.equals("n")) {
+                    return;
+                } else {
+                    System.out.println("Please enter Y or N");
+                }
+            }
+        }
 
     }
 }

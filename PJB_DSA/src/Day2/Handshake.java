@@ -1,5 +1,7 @@
 package Day2;
 
+import java.util.Scanner;
+
 public class Handshake {
 
     public static int handshake(int n) {
@@ -8,17 +10,39 @@ public class Handshake {
         return n*(n-1)/2;
     }
 
-    public static int factorial(int n) {
-        int res = 1;
-        for (int i = 2; i <= n; i++) {
-            res *= i;
-        }
-        return res;
-    }
+//    public static int factorial(int n) {
+//        int res = 1;
+//        for (int i = 2; i <= n; i++) {
+//            res *= i;
+//        }
+//        return res;
+//    }
 
     public static void main(String[] args) {
-        System.out.println(handshake(4));
-        System.out.println(handshake(5277));
-        System.out.println(factorial((int) Math.pow(10,5)));
+        Scanner sc = new Scanner(System.in);
+        boolean check = true;
+        while (true){
+            if(check) {
+                System.out.println("Number of people:");
+                int n = sc.nextInt();
+                System.out.println("Result: ");
+                System.out.println(handshake(n));
+            }
+            System.out.println("Continue? (Y/N)");
+            String input = sc.next();
+            if(input.equalsIgnoreCase("y")){
+                check = true;
+                continue;
+            }
+            else if(input.equalsIgnoreCase("n")){
+                check = false;
+                break;
+            }
+            else{
+                System.out.println("Wrong input");
+                check = false;
+            }
+        }
+
     }
 }

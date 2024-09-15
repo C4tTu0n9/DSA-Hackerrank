@@ -1,9 +1,6 @@
 package Day2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class BusStation {
 
@@ -35,6 +32,7 @@ public class BusStation {
 
         return validCapacities;
     }
+
     private static int getGCD(int a, int b) {
         if (b == 0) return a;
         return getGCD(b, a % b);
@@ -67,8 +65,33 @@ public class BusStation {
     }
 
     public static void main(String[] args) {
-        List<Integer> groups = Arrays.asList(1, 2, 1, 1, 1, 2, 1, 3);
-        List<Integer> result = solve(groups);
-        System.out.println(result);
+        Scanner sc = new Scanner(System.in);
+        boolean check = true;
+        while (true) {
+            if (check) {
+                System.out.println("Number groups: ");
+                int groupNum = sc.nextInt();
+                System.out.println("Group input: ");
+                List<Integer> groups = new ArrayList<>();
+                for (int i = 0; i < groupNum; i++) {
+                    groups.add(sc.nextInt());
+                }
+                List<Integer> result = solve(groups);
+                System.out.println(result);
+            }
+            System.out.println("Continue? (Y/N)");
+            String input = sc.next();
+            if (input.equalsIgnoreCase("y")) {
+                check = true;
+                continue;
+            } else if (input.equalsIgnoreCase("n")) {
+                check = false;
+                break;
+            } else {
+                System.out.println("Wrong input");
+                check = false;
+            }
+        }
+
     }
 }

@@ -11,13 +11,9 @@ public class Anagrams {
         b=b.toLowerCase();
         int[] count = new int[26];
         for(char c : a.toCharArray()){
-            char d = c;
-            int e = c - 'a';
             count[c - 'a']++;
         }
         for(char c : b.toCharArray()) {
-            char d = c;
-            int e = c - 'a';
             count[c - 'a']--;
         }
         for(int i : count) if(i != 0) return false;
@@ -40,12 +36,29 @@ public class Anagrams {
     }
 
     public static void main(String[] args) {
-
         Scanner scan = new Scanner(System.in);
-        String a = scan.next();
-        String b = scan.next();
-        scan.close();
-        boolean ret = isAnagram(a, b);
-        System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
+
+        while (true) {
+            System.out.println("String 1: ");
+            String a = scan.next();
+            System.out.println("String 2: ");
+            String b = scan.next();
+            boolean res = isAnagram(a, b);
+            System.out.print("Result: ");
+            System.out.println((res) ? "Anagrams" : "Not Anagrams" );
+
+            while (true) {
+                System.out.println("Continue? (Y/N)");
+                String input = scan.nextLine().trim().toLowerCase();
+                if (input.equals("y")) {
+                    break;
+                } else if (input.equals("n")) {
+                    return;
+                } else {
+                    System.out.println("Please enter Y or N");
+                }
+            }
+        }
+
     }
 }

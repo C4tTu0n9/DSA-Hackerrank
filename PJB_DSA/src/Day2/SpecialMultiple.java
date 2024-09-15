@@ -1,5 +1,7 @@
 package Day2;
 
+import java.util.Scanner;
+
 public class SpecialMultiple {
 
     public static String solve(int n) {
@@ -27,10 +29,30 @@ public class SpecialMultiple {
     }
 
     public static void main(String[] args) {
-        System.out.println(1);
-        System.out.println(5);
-        System.out.println(7);
-        System.out.println(solve(496));
-        System.out.println(solve(1230120310));
+        Scanner sc = new Scanner(System.in);
+        boolean check = true;
+        while (true){
+            if(check) {
+                System.out.println("Number: ");
+                int n = sc.nextInt();
+                System.out.println("Result: ");
+                System.out.println(solve(n));
+            }
+            System.out.println("Continue? (Y/N)");
+            String input = sc.next();
+            if(input.equalsIgnoreCase("y")){
+                check = true;
+                continue;
+            }
+            else if(input.equalsIgnoreCase("n")){
+                check = false;
+                break;
+            }
+            else{
+                System.out.println("Wrong input");
+                check = false;
+            }
+        }
+
     }
 }

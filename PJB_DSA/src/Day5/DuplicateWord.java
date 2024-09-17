@@ -1,17 +1,19 @@
 package Day5;
+
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 public class DuplicateWord {
 
     public static void main(String[] args) {
 
-    /*
-    *    \\b: Đánh dấu ranh giới của từ.
-    *    (\\w+): Nhóm bắt đầu, khớp với một hoặc nhiều ký tự từ (chữ cái, số, gạch dưới).
-    *    (?:\\W+\\1\\b)+: Khớp với một hoặc nhiều lần xuất hiện của các ký tự không phải từ,
-    *    theo sau là cùng từ đã bắt được trước đó (\1 tham chiếu đến nhóm đầu tiên), và kết thúc bằng ranh giới từ.
-    **/
+        /*
+         *    \\b: Đánh dấu ranh giới của từ.
+         *    (\\w+): Nhóm bắt đầu, khớp với một hoặc nhiều ký tự từ (chữ cái, số, gạch dưới).
+         *    (?:\\W+\\1\\b)+: Khớp với một hoặc nhiều lần xuất hiện của các ký tự không phải từ,
+         *    theo sau là cùng từ đã bắt được trước đó (\1 tham chiếu đến nhóm đầu tiên), và kết thúc bằng ranh giới từ.
+         **/
         String regex = "\\b(\\w+)(?:\\W+\\1\\b)+";
 
         //Pattern.CASE_INSENSITIVE cho phép khớp mẫu mà không phân biệt chữ hoa/thường.

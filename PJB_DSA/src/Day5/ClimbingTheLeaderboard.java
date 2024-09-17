@@ -28,7 +28,7 @@ public class ClimbingTheLeaderboard {
 
             for (int j = new_ranked.size() - 1; j >= 0; j--) {
                     if(player.get(i) < new_ranked.get(j)) {
-                        climbed.add(j+2);
+                        climbed.add(j+1+1);
                         break;
                     }
             }

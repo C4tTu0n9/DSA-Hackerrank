@@ -1,13 +1,8 @@
-package Day6;
+package Day7;
 
-import java.io.*;
 import java.util.*;
-import java.util.stream.IntStream;
 
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
-
-class Result {
+public class SparseArrays {
 
     public static List<Integer> matchingStrings(List<String> stringList, List<String> queries) {
         // Write your code here
@@ -22,9 +17,6 @@ class Result {
         return matchingStrings;
     }
 
-}
-
-public class SparseArray {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         List<String> stringList = new ArrayList<>();
@@ -37,8 +29,7 @@ public class SparseArray {
         for (int i = 0; i < m; i++) {
             queries.add(sc.next());
         }
-        List<Integer> matchingStrings = Result.matchingStrings(stringList, queries);
+        List<Integer> matchingStrings = matchingStrings(stringList, queries);
         System.out.println(matchingStrings);
     }
-
 }

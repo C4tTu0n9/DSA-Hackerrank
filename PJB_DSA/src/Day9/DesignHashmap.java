@@ -11,7 +11,7 @@ public class DesignHashmap {
     }
 
     public int get(int key) {
-
+        return 0;
     }
 
     public void remove(int key) {

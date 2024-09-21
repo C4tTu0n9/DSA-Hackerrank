@@ -39,6 +39,9 @@ public class _2DArray_DS {
         //     }
         // }
         // return sum;
+        // 1 2 3 4 5
+        // 2 3 4 5 6
+        // 4 5 6 7 8
         int i = 0, j = 0;
         int sum = 0;
         int cur = -2147483648;

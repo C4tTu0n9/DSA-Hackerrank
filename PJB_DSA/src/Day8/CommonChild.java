@@ -79,13 +79,13 @@ public class CommonChild {
         res.put(1, a);
         int maxNum = 1;
         for (int i = 0; i < s1.length(); i++) {
-            if (map.containsKey((int) s1.charAt(i)) == false) {
+            if (!map.containsKey((int) s1.charAt(i))) {
                 map.put((int) s1.charAt(i), new ArrayList<>());
             }
             map.get((int) s1.charAt(i)).add(i);
         }
         for (int i = 0; i < s2.length(); i++) {
-            if (map.containsKey((int) s2.charAt(i)) == true) {
+            if (map.containsKey((int) s2.charAt(i))) {
                 for (int j = maxNum; j > 0; j--) {
                     int val = res.get(j)[1];
                     int pre = res.get(j)[0];

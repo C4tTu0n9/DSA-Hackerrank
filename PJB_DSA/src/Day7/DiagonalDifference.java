@@ -30,8 +30,7 @@ public class DiagonalDifference {
         int sum1 = 0;
         int j = 0;
         for (int i = 0; i < arr.size(); i++) {
-            sum1 += arr.get(i).get(j) - arr.get(i).get(arr.get(i).size() - j - 1);
-            j++;
+            sum1 += arr.get(i).get(i) - arr.get(i).get(arr.get(i).size() - i - 1);
         }
         return Math.abs(sum1);
     }

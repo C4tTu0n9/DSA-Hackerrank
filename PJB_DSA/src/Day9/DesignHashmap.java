@@ -6,18 +6,19 @@ public class DesignHashmap {
 
     ArrayList<Integer> keys = new ArrayList<>();
     ArrayList<Integer> values = new ArrayList<>();
+
     public DesignHashmap() {
 
     }
 
     public void put(int key, int value) {
-        if(keys.isEmpty()){
+        if (keys.isEmpty()) {
             keys.add(key);
             values.add(value);
             return;
         }
         for (int i = 0; i < keys.size(); i++) {
-            if(keys.get(i) == key){
+            if (keys.get(i) == key) {
                 values.set(i, value);
                 return;
             }
@@ -27,22 +28,11 @@ public class DesignHashmap {
     }
 
     public int get(int key) {
-        for (int i = 0; i < keys.size(); i++) {
-            if(keys.get(i) == key){
-                return values.get(i);
-            }
-        }
-        return -1;
+        return values.get(key);
     }
 
     public void remove(int key) {
-        for (int i = 0; i < keys.size(); i++) {
-            if(keys.get(i) == key){
-                keys.remove(i);
-                values.remove(i);
-                break;
-            }
-        }
+        values.remove(key);
     }
 
     public static void main(String[] args) {
@@ -52,13 +42,13 @@ public class DesignHashmap {
         dhm.put(3, 123);
         dhm.put(4, 5);
         dhm.put(1, 10);
-        for(int i : dhm.values){
-            System.out.print(i+" -> ");
+        for (int i : dhm.values) {
+            System.out.print(i + " -> ");
         }
         System.out.println();
         dhm.remove(1);
-        for(int i : dhm.values){
-            System.out.print(i+" -> ");
+        for (int i : dhm.values) {
+            System.out.print(i + " -> ");
         }
         System.out.println();
         System.out.println(dhm.get(4));

@@ -48,20 +48,16 @@ public class JavaHashset {
 
         System.out.println();
         //hashset
-        List<Integer> l = new ArrayList<>();
         int c = 0;
         Set<String> set = new HashSet<>();
         for (int i = 0; i < t; i++) {
             if(!set.contains(pair_left[i]+" "+pair_right[i])) {
                 set.add(pair_left[i] + " " + pair_right[i]);
-                l.add(++c);
+                System.out.println(++c);
             }
             else{
-                l.add(c);
+                System.out.println(c);
             }
-        }
-        for (int i = 0; i < l.size(); i++) {
-            System.out.println(l.get(i));
         }
 
     }

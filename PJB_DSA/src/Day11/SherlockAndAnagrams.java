@@ -1,11 +1,13 @@
 package Day11;
 
-public class SherlockAndAnagrams {
-    public static int sherlockAndAnagrams(String s) {
-        // Write your code here
-        return -1;
-    }
-    public static void main(String[] args) {
+import java.io.*;
+import java.util.Scanner;
 
+public class SherlockAndAnagrams {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.println(Result.sherlockAndAnagrams(s));
     }
 }

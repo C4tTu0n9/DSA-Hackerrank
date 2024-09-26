@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class Result {
+
     public static int height(Node root) {
         // Write your code here.
         if (root == null) return 0;
@@ -30,8 +31,21 @@ public class Result {
     }
 
     public static Node lca(Node root, int v1, int v2) {
-        // Write your code here.
-        return null;
+      	// Write your code here.
+            while(root!=null)
+        {
+            if((root.data>v1 && root.data<v2)||(root.data>v2 && root.data<v1)||
+            root.data==v1 || root.data==v2 )
+            {
+                return root;
+            }else if(root.data>v1)
+            {
+                return lca(root.left, v1, v2);
+            }else{
+                return lca(root.right, v1, v2);
+            }
+        }
+        return root;  
     }
 
     //    public static List<String> binaryTreePaths(Node root) {
@@ -72,7 +86,6 @@ public class Result {
     }
 
     public static List<String> binaryTreePaths(Node root) {
-
         List<String> a1 = new ArrayList<>();
         traverse(root, a1, "");
         return a1;
